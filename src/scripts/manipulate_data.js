@@ -12,7 +12,6 @@ return d3.json("/data/taxi_data.json").then(data => {
         options[datum.pu_location_id] = options[datum.pu_location_id] || 0;
         options[datum.pu_location_id] += 1
     });
-    debugger
     return options;
 });
 
