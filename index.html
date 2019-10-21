@@ -13,16 +13,42 @@
     <!-- <script src="https://cdn.jsdelivr.net/npm/promise-polyfill@8/dist/polyfill.js"></script> -->
     <script src="https://d3js.org/d3.v5.min.js"></script>
     <script src="./dist/main.js"></script>
-    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBO275gpja9whJPOngbOf9MS0ATbepRBFE&&libraries=visualization&callback=initMap" async defer></script>
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBO275gpja9whJPOngbOf9MS0ATbepRBFE&callback=initMap" async defer></script>
     <script src="./src/scripts/manipulate_data.js"></script>
     <script src="./src/scripts/map.js"></script>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" type="text/css" media="screen" href="./dist/main.css" />
 </head>
-<body>  
+<body> 
+<h1>NYC Taxi Data Visualization</h1>
+<!-- <img src="https://www.dafont.com/forum/attach/orig/2/8/282541.jpg"></img> -->
 <div id="map"></div>
-<div id="tooltip">
-</div>
+<input type="range" min="0" max="24" value="0" class="slider" id="time-slider">
+<input type="text" id="slider-value" value="">
+<button type="button" id="toggle-type" value="Pick Ups"></button>
+<button type = "button" id="toggle-car" value="Taxi"></button>
+<div id="time-info"></div>
+
+<!-- <script>
+var slider = document.getElementById("time-slider");
+var output = document.getElementById("slider-value");
+var typeButton = document.getElementById("toggle-type");
+var carButton = document.getElementById("toggle-car")
+ // Display the default slider value
+ output.value = slider.value;
+
+// Update the current slider value (each time you drag the slider handle)
+slider.oninput = function() {
+  output.value = this.value;
+}
+typeButton.onclick = function() {
+    typeButton.value === "Pick Ups" ? typeButton.value = "Drop Offs" : typeButton.value = "Pick Ups";
+}
+
+carButton.onclick = function() {
+    carButton.value === "Taxi" ? carButton.value = "App Cars" : carButton.value = "Taxi";
+}
+</script> -->
  
 </body>
 </html>
