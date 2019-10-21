@@ -11,7 +11,7 @@ function formatData(time, type, car) {
         tripTime = car === "Taxi" ? "tpep_dropoff_datetime" : "dropoff_datetime";
     }
 
-    vehicleType = car === "Taxi" ? "/data/taxi_data.json" : "/data/fhv_data.json";
+    vehicleType = car === "Taxi" ? "./data/taxi_data.json" : "./data/fhv_data.json";
 // let taxiPickups;
 // d3.json("/data/taxi_zones.geojson").then(res => taxiZones = res);
 return d3.json(vehicleType).then(data => {
