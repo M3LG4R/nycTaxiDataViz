@@ -14,7 +14,7 @@ function formatData(time, type, car) {
     vehicleType = car === "Taxi" ? "https://raw.githubusercontent.com/M3LG4R/nycTaxiDataViz/gh-pages/data/taxi_data.json" : "https://raw.githubusercontent.com/M3LG4R/nycTaxiDataViz/gh-pages/data/fhv_data.json";
 // let taxiPickups;
 // d3.json("/data/taxi_zones.geojson").then(res => taxiZones = res);
-return d3.json(vehicleType).then(data => {
+return d3.json(vehicleType, {cache: "force-cache"}).then(data => {
     let options = {};
     // let percent = 1/data.length;
     // if ((typeof(time) === "undefined")) {
