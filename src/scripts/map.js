@@ -203,11 +203,13 @@ function initMap() {
         var pickups = Object.values(options);
         // var low = [5, 69, 54];
         // var high = [151, 83, 34];
-        var low = [0, 0, 10];
-        var high = [0, 0, 100];
+        var low = [26, 26, 26];
+        var high = [255, 255, 255];
         var max_times = Math.max(...pickups);
         var min_times = Math.min(...pickups);
-        var delta = (options[location_code] - min_times)/(max_times - min_times) || 0;
+        var numTrips = options[location_code] || 0;
+        var delta = (numTrips - min_times)/(max_times - min_times)
+        // var delta = ((options[location_code] - min_times)/(max_times - min_times)) || 0;
         var color = [];
         for (var i = 0; i < 3; i++) {
           color[i] = (high[i] - low[i]) * delta + low[i];
@@ -225,7 +227,7 @@ function initMap() {
         
         var opacity = (options[location_code] - min_times)/(max_times - min_times) || 0;
         return {
-            fillColor: 'hsl(' + color[0] + ',' + color[1] + '%,' + color[2] + '%)',
+            fillColor: 'rgb(' + color[0] + ',' + color[1] + ',' + color[2] + ')',
             strokeWeight: strokeWeight,
             zIndex: zIndex,
             fillOpacity: .75,
@@ -289,11 +291,14 @@ function initMap() {
     map.data.setStyle(function(feature) {
         var location_code = parseInt(feature.getProperty('location_id'));
         var pickups = Object.values(options);
-        var low = [0, 0, 10];
-        var high = [0, 0, 100];
+        // var low = [0, 0, 10];
+        // var high = [0, 0, 100];
+        var low = [26, 26, 26];
+        var high = [255, 255, 255];
         var max_times = Math.max(...pickups);
         var min_times = Math.min(...pickups);
-        var delta = (options[location_code] - min_times)/(max_times - min_times) || 0;
+        var numTrips = options[location_code] || 0;
+        var delta = (numTrips - min_times)/(max_times - min_times)
         var color = [];
         for (var i = 0; i < 3; i++) {
           color[i] = (high[i] - low[i]) * delta + low[i];
@@ -311,7 +316,8 @@ function initMap() {
         
         var opacity = (options[location_code] - min_times)/(max_times - min_times) || 0;
         return {
-            fillColor: 'hsl(' + color[0] + ',' + color[1] + '%,' + color[2] + '%)',
+            fillColor: 'rgb(' + color[0] + ',' + color[1] + ',' + color[2] + ')',
+            // fillColor: 'hsl(' + color[0] + ',' + color[1] + '%,' + color[2] + '%)',
             strokeWeight: strokeWeight,
             zIndex: zIndex,
             fillOpacity: .75,
@@ -361,11 +367,15 @@ function initMap() {
     map.data.setStyle(function(feature) {
         var location_code = parseInt(feature.getProperty('location_id'));
         var pickups = Object.values(options);
-        var low = [0, 0, 10];
-        var high = [0, 0, 100];
+        // var low = [0, 0, 10];
+        // var high = [0, 0, 100];
         var max_times = Math.max(...pickups);
         var min_times = Math.min(...pickups);
-        var delta = (options[location_code] - min_times)/(max_times - min_times) || 0;
+        // var delta = (options[location_code] - min_times)/(max_times - min_times) || 0;
+        var low = [26, 26, 26];
+        var high = [255, 255, 255];
+        var numTrips = options[location_code] || 0;
+        var delta = (numTrips - min_times) / (max_times - min_times);
         var color = [];
         for (var i = 0; i < 3; i++) {
           color[i] = (high[i] - low[i]) * delta + low[i];
@@ -383,7 +393,7 @@ function initMap() {
         
         var opacity = (options[location_code] - min_times)/(max_times - min_times) || 0;
         return {
-            fillColor: 'hsl(' + color[0] + ',' + color[1] + '%,' + color[2] + '%)',
+            fillColor: 'rgb(' + color[0] + ',' + color[1] + ',' + color[2] + ')',
             strokeWeight: strokeWeight,
             zIndex: zIndex,
             fillOpacity: .75,
@@ -432,11 +442,17 @@ function initMap() {
     map.data.setStyle(function(feature) {
         var location_code = parseInt(feature.getProperty('location_id'));
         var pickups = Object.values(options);
-        var low = [0, 0, 10];
-        var high = [0, 0, 100];
+        // var low = [0, 0, 10];
+        // var high = [0, 0, 100];
         var max_times = Math.max(...pickups);
         var min_times = Math.min(...pickups);
-        var delta = (options[location_code] - min_times)/(max_times - min_times) || 0;
+        // var delta = (options[location_code] - min_times)/(max_times - min_times) || 0;
+        var low = [26, 26, 26];
+        var high = [255, 255, 255];
+        var max_times = Math.max(...pickups);
+        var min_times = Math.min(...pickups);
+        var numTrips = options[location_code] || 0;
+        var delta = (numTrips - min_times) / (max_times - min_times);
         var color = [];
         for (var i = 0; i < 3; i++) {
           color[i] = (high[i] - low[i]) * delta + low[i];
@@ -454,7 +470,7 @@ function initMap() {
         
         var opacity = (options[location_code] - min_times)/(max_times - min_times) || 0;
         return {
-            fillColor: 'hsl(' + color[0] + ',' + color[1] + '%,' + color[2] + '%)',
+            fillColor: 'rgb(' + color[0] + ',' + color[1] + ',' + color[2] + ')',
             strokeWeight: strokeWeight,
             zIndex: zIndex,
             fillOpacity: .75,

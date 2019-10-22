@@ -3,9 +3,10 @@
 
 <head>
     <meta charset="utf-8" />
+    <script src="https://kit.fontawesome.com/5afae05217.js" crossorigin="anonymous"></script>
     <!-- <meta http-equiv="X-UA-Compatible" content="IE=edge"> -->
     <title>NYC Yellow Taxi Pickup</title>
-
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans|Roboto+Condensed&display=swap" rel="stylesheet">
     <!-- Include a polyfill for ES6 Promises (optional) for IE11 -->
     <!-- <script src="https://cdn.jsdelivr.net/npm/promise-polyfill@8/dist/polyfill.js"></script> -->
     <script src="https://d3js.org/d3.v5.min.js"></script>
@@ -17,14 +18,50 @@
     <link rel="stylesheet" type="text/css" media="screen" href="./dist/main.css" />
 </head>
 <body> 
+<section>
 <h1>NYC Taxi Data Visualization</h1>
+<br>
+<br>
+<p>
+In this app, we will explore trip record data (courtesy of NYC OpenData) of NYC
+Yellow Taxis as well as High-Volume For-Hire Services(which currently 
+consist of Uber, Lyft, Juno & Via). This data is represented on the map to the 
+right via a heatmap of designated Taxi Zones in NYC. The lighter the tile, the more
+Pick Ups/Drop offs have taken place. Hover over a tile to see more detailed information.
+</p>
+<br>
+<br>
+<p>
+Tips:
+<br>
+Buttons are labeled with type of data currently being displayed. Clicking the Buttons will 
+toggle trip type(Pick Ups/Drop Offs) and vehicle type(Taxi/App Cars). The slider below the map
+allows you to see how the data changes from hour to hour. The final point on the slider displays 
+aggregate data for the entire day.
+</p>
+<div class="links">
+    <a href="https://www.github.com/M3LG4R">
+        <i class="fab fa-github fa-2x"></i>
+    </a>
+    <a href="https://www.github.com/M3LG4R">
+        <i class="fab fa-linkedin fa-2x"></i>
+    </a>
+    <a href="https://www.github.com/M3LG4R">
+        <i class="fas fa-laptop-code fa-2x"></i>
+    </a>
+</div>
+</section>
 <!-- <img src="https://www.dafont.com/forum/attach/orig/2/8/282541.jpg"></img> -->
 <div id="map"></div>
-<input type="range" min="0" max="24" value="0" class="slider" id="time-slider">
+<input type="range" min="0" max="24" value="12" class="slider" id="time-slider">
 <input type="text" id="slider-value" value="">
-<button type="button" id="toggle-type" value="Pick Ups"></button>
-<button type = "button" id="toggle-car" value="Taxi"></button>
-<div id="time-info"></div> 
+<div class="controls">
+    <button type="button" id="toggle-type" value="Pick Ups"></button>
+    <div class="time-container">Time of Day:
+        <div id="time-info"></div> 
+    </div>
+    <button type="button" id="toggle-car" value="Taxi"></button>
+</div>
 
 <!-- <script>
 var slider = document.getElementById("time-slider");

@@ -368,7 +368,7 @@ textarea {
 
 #map {
     width: 75%;
-    height: 50%;
+    height: 75%;
     margin-left: 25%;
     transition: color .25s ease-in 0s
 }
@@ -387,13 +387,15 @@ textarea {
  }
 
  body {
-     background: linear-gradient(270deg, #2c2f33, #23272a, black);
+     background: linear-gradient(270deg, #2c2f33,#23272a);
      background-size: 600% 600%;
      width: 100vw;
-     height: 100vw;
-     -webkit-animation: back-gradient 20s ease infinite;
-    -moz-animation: back-gradient 20s ease infinite;
-    animation: back-gradient 20s ease infinite;
+     height: 100vh;
+     -webkit-animation: back-gradient 25s ease infinite;
+    -moz-animation: back-gradient 25s ease infinite;
+    animation: back-gradient 25s ease infinite;
+    position: relative;
+    font-family: 'Roboto Condensed', sans-serif;
  }
 
 
@@ -428,14 +430,15 @@ textarea {
   -webkit-appearance: none;  
   appearance: none;
   width: 75%; 
-  height: 10px; 
+  height: 13px; 
   border-radius: 5px;
   background: #d3d3d3;
   outline: none; 
   opacity: 0.7; 
   -webkit-transition: .2s; 
   transition: opacity .2s;
-  margin-left: 25%
+  margin-left: 25%;
+  margin-top: 4px;
 }
 
 
@@ -448,8 +451,8 @@ textarea {
   -webkit-appearance: none; /* Override default look */
   appearance: none;
   background: black;
-  width: 20px; /* Set a specific slider handle width */
-  height: 20px; /* Slider handle height */
+  width: 24px; /* Set a specific slider handle width */
+  height: 24px; /* Slider handle height */
   border-radius: 50%;
   cursor: pointer; /* Cursor on hover */
 }
@@ -457,20 +460,97 @@ textarea {
 #time-slider::-moz-range-thumb {
   width: 20px; /* Set a specific slider handle width */
   height: 20px; /* Slider handle height */
-  background: black;
+  background: #black;
   border-radius: 50%;
   cursor: pointer; /* Cursor on hover */
+  margin-top: 3px;
 }
 
-body > button {
-width: 100px;
-height: 25px;
+.controls button {
+width: 150px;
+height: 30px;
 color: black;
 border-radius: 4px;
+transition: background-color .2s;
+font-family: 'Roboto Condensed', sans-serif;
 }
 
+.controls button:hover {
+    background-color: gray;
+    border: black;
+}
+
+#toggle-type:active {
+    margin-top: 2px;
+}
+
+#toggle-car:active {
+    margin-top: 2px;
+}
 #time-info {
-    width: 200px;
     color: white;
     text-shadow: 2px 2px 4px #000000;
+    margin-left: 10%;
 }
+
+.time-container {
+    color: white;
+    line-height: 1.5em;
+
+}
+
+body h1 {
+    font-size: 24px;
+    color: white;
+    font-family: 'Roboto Condensed', sans-serif;
+}
+
+body section {
+    position: absolute;
+    width: 25%;
+    color: white;
+    left: 0%;
+    top: 0%;
+    font-family: 'Open Sans', sans-serif;
+}
+
+section p {
+    line-height: 1.5em;
+}
+
+.controls {
+    display: flex;
+    justify-content: space-evenly;
+    width: 50%;
+    margin-left: 37.5%;
+    align-items: center;
+}
+
+.links {
+    font-size: 20px;
+    display: flex;
+    justify-content: space-evenly;
+    margin-top: 60%;
+}
+
+
+a {
+  color: white;
+}
+
+
+a:visited {
+  color: grey;
+}
+
+
+a:hover {
+  color: white;
+}
+
+
+a:active {
+  color: grey;
+}
+
+
